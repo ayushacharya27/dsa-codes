@@ -41,27 +41,25 @@ struct Node* insertLevelOrder(int arr[] , struct Node* root , int i , int n){
     return root;    
 
 }
+// same as before
 
-void inorder(struct Node* root){
-    if(root!=NULL){
-        // will print all left node , once finished will move on to right node
-
-        inorder(root->left);
-        printf("%d" , root->data);
-        inorder(root->right);
+void preorder(struct Node* root){
+    if(root !=NULL){
         /*  1
            / \
           2   3
          / \
         4   5
         array = [1,2,3,4,5]
-        print = 4, 2 , 5 , 1 , 3 
-        i.e. we are going left part first then backtracking and again going to right subtree , i.e starting from last left node  */
+        print = 1 , 2 , 4 ,5 , 3  
+        i.e. we are to root and then from there going left if finished then going right */
+        printf("%d",root->data);
+        preorder(root->left);
+        preorder(root->right);
+
+
 
     }
 
-}
-int main(){
-    // Do whatever the fuck you want
-    return 0 ;
+
 }
