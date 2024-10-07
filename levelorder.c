@@ -34,8 +34,8 @@ struct Node* insertLevelOrder(int arr[] , struct Node* root , int i , int n){
         4   5
         array = [1,2,3,4,5]
         i.e. we are going level wise*/
-        root->left = insertLevelOrder(arr , root , 2*i+1 , n); // 2i+1 for left node
-        root-> right = insertLevelOrder(arr, root , 2*i+2 , n);// 2i+2 for right node
+        root->left = insertLevelOrder(arr , root->left , 2*i+1 , n); // 2i+1 for left node
+        root-> right = insertLevelOrder(arr, root->right , 2*i+2 , n);// 2i+2 for right node
 
     }
     return root;    
@@ -43,7 +43,7 @@ struct Node* insertLevelOrder(int arr[] , struct Node* root , int i , int n){
 }
 
 void levelorder(struct Node* root){
-    if(root = NULL){
+    if(root == NULL){
         return;
     }
     struct Node* queue[100];
