@@ -14,7 +14,7 @@ int main(){
                 printf("4");
             }
             else{
-                
+                printf(" ");
             }
              
 
